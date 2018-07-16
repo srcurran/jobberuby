@@ -2,25 +2,14 @@
 <html>
   <head>
     <title><%= yield(:title) %> - Jobberuby</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%=render 'layouts/head' %>
   </head>
-
   <body>
-    <header>
-      <div class="logo">
-        Jobber
-      </div>
-      <nav>
-        <li><% link_to "Home", "#" %></li>
-        <li><% link_to "Help", "#" %></li>
-        <li><% link_to "Log in", "#" %></li>
-    </header>
-    <main>
+    <%= render 'layouts/header' %>
+
+    <main class="container">
       <%= yield %>
     </main>
+    
   </body>
 </html>
