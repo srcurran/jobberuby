@@ -3,6 +3,14 @@
 
 @import 'variables.scss';
 
+/* mixins */
+@mixin box_sizing{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* css */
 header.navbar{
   border-radius:0;
   background-color: $main;
@@ -34,32 +42,23 @@ header.navbar{
   }
 }
 
-// header.navbar{
-//  a{
-//     color:#fff !important;
-//   }
-//   #logo{
-//     padding:1rem 2rem;
-//     font-size:4rem;
-//     font-family: $heading-font;
-//     text-transform: uppercase;
-//     float: left;
-//     letter-spacing: 1px;
-//   }
-//   nav{
-//     justify-self:end;
-//     ul{
-//       padding:2rem;
-//       li{
-//         margin-left:2rem;
-//         display:inline-block;
-//         a{
-//           font-weight:300;
-//           &:hover{
-//             color:$main !important;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+/* testing */
+.debug_dump {
+  width: 100%;
+  max-width:1170px;
+  margin:100px auto;
+  @include box_sizing;
+}
