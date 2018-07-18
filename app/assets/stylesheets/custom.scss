@@ -33,20 +33,21 @@ header.navbar{
       font-size:2rem;
       ul.nav{
         li{
-          &.open{
-            a{
-              color:$dark;;
-              background:none;
-            }
-          }
           a{
             font-size:2rem;
             line-height:32px;
             font-weight:300;
             color:$white;
-            &:hover{
+            &:hover, &:focus{
               color:$darker;
+              outline:none;
               background:none;
+            }
+          }
+          &.open{
+            a{
+              color:$dark;
+              background:none !important;
             }
           }
         }
@@ -68,7 +69,7 @@ ol.todos{
       font-size:.75em;
       display:block;
       .author{
-        
+
       }
       .timestamp{
 
