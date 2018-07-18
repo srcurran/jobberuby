@@ -38,6 +38,10 @@ class User < ApplicationRecord
   end
 
   def feed
-    Todo.where("user_id", id)
+    Todo.where(user_id: id).where(completed: nil)
+  end
+
+  def full_feed
+    Todo.where(user_id: id)
   end
 end

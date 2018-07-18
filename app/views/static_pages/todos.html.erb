@@ -1,0 +1,9 @@
+<h1>Todos</h1>
+<% if logged_in? %>
+  <div class="row">
+    <div class="col-md-8">
+      <h3>Todo List</h3>
+      <%= render 'shared/full_feed' %>
+    </div>
+  </div>
+<% end %>

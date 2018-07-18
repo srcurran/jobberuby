@@ -1,0 +1,6 @@
+<% if @full_feed_items.any? %>
+  <ol class="todos">
+    <%= render @full_feed_items %>
+  </ol>
+  <%= will_paginate @full_feed_items %>
+<% end %>

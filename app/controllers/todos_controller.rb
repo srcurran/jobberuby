@@ -13,11 +13,16 @@ class TodosController < ApplicationController
 
 
   def update
-    flash[:success] = "hot dogs"
+    @todo = Todo.find(params[:id])
+    @todo.update_attribute(:completed, "true")
+    redirect_to root_url
   end
 
-  def edit
+  def todone
+    @todo.update_attribute(:content, nil)
   end
+
+
 
   private
 
@@ -25,7 +30,6 @@ class TodosController < ApplicationController
       params.require(:todo).permit(:content)
     end
 
-    def set_done
-      flash[:success] = "hot dogs"
-    end
+
+
 end

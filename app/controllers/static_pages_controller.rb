@@ -15,4 +15,10 @@ class StaticPagesController < ApplicationController
 
   def contact
   end
+
+  def todos
+    @todo = current_user.todos.build
+    @full_feed_items = current_user.full_feed.paginate(page: params[:page])
+  end
+
 end
