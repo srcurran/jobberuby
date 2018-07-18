@@ -55,6 +55,28 @@ header.navbar{
   }
 }
 
+/* todos */
+ol.todos{
+  padding-left:0;
+  li{
+    background:$lightgrey;
+    padding:1rem;
+    list-style:none;
+    margin-bottom:10px;
+    .meta{
+      color:$mediumgrey;
+      font-size:.75em;
+      display:block;
+      .author{
+        
+      }
+      .timestamp{
+
+      }
+    }
+  }
+}
+
 /* forms */
 
 input, textarea, select, .uneditable-input {

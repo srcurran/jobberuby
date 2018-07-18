@@ -1,2 +1,14 @@
+<div class="col-md-8">
 <h1>User Information</h1>
-<%= @user.name %>, <%= @user.email %>.
+<%= render @user %>
+</div>
+
+<div class="col-md-8">
+  <% if @user.todos.any? %>
+    <h3>Todos</h3>
+    <ol class="todos">
+      <%= render @todos %>
+    </ol>
+    <%= will_paginate @todos %>
+  <% end %>
+</div>

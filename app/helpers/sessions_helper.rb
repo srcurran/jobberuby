@@ -11,6 +11,11 @@ module SessionsHelper
     cookies.permanent.signed[:user_id] = user.id
     cookies.permanent[:remember_token] = user.remember_token
   end
+
+  def current_user?(user)
+    user == current_user
+  end
+
   # returns current logged-in user
   def current_user
     #checks to see if @current_user is set. if it isn't, find it via session[:user_id]
@@ -35,7 +40,7 @@ module SessionsHelper
     cookies.delete(:user_id)
     cookies.delete(:remember_token)
   end
-  
+
   def log_out
     forget(current_user)
     session.delete(:user_id)
