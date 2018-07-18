@@ -1,6 +1,6 @@
 <li>
   <span class="content"><%= todo.content %></span>
-  <sopn class="status">Status: <% todo.status %></span>
+  
   <span class="meta">Posted <span class="author">by <%= link_to todo.user.name, todo.user %></span> <span class="timestamp"><%= time_ago_in_words(todo.created_at) %> ago.</span>
   <div><%= link_to "Completed", todo, method: :todo_params %>
 </li>
